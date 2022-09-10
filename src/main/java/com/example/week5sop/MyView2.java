@@ -27,7 +27,7 @@ public class MyView2 extends HorizontalLayout {
         addSentence.setWidth("100%");
         btnAddSentence = new Button("Add Sentence");
         btnAddSentence.setWidth("100%");
-        panel1.add(addWord, btnAddGood);
+        panel1.add(addWord, btnAddGood, btnAddBad);
         panel2.add(addSentence, btnAddSentence);
         add(panel1, panel2);
     }
