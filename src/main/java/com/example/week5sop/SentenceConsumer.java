@@ -19,6 +19,8 @@ public class SentenceConsumer {
 
         }
         System.out.println("In addBadSentence Method : ["+text+"]");
+        System.out.println(sentences.badSentences);
+//        return "["+text+"]";
     }
 
     @RabbitListener(queues = "GoodWordQueue")
@@ -32,6 +34,8 @@ public class SentenceConsumer {
             text = text+""+sentences.goodSentences.get(i);
         }
         System.out.println("In addGoodSentence Method : ["+text+"]");
+        System.out.println(getSentences().goodSentences);
+//        return "["+text+"]";
     }
 
     @RabbitListener(queues = "GetQueue")

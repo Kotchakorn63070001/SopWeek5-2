@@ -1,5 +1,6 @@
 package com.example.week5sop;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Word {
