@@ -76,10 +76,11 @@ public class WordPublisher {
         return "Not Found";
     }
 
-    @RequestMapping(value = "/getSentence", method = RequestMethod.GET)
-    public Sentence getSentence(){
-//        rabbitTemplate.convertAndSend("Direct", "queue", "");
-        return sentenceConsumer.getSentences();
-    }
+//    @RequestMapping(value = "/getSentence", method = RequestMethod.GET)
+//    public Sentence getSentence(){
+////        rabbitTemplate.convertAndSend("Direct", "queue",   );
+//
+//        return sentenceConsumer.getSentences();
+//    }
 
 }

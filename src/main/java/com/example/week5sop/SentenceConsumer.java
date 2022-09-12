@@ -19,7 +19,8 @@ public class SentenceConsumer {
 
         }
         System.out.println("In addBadSentence Method : ["+text+"]");
-        System.out.println(sentences.badSentences);
+//        System.out.println(sentences.badSentences);
+
 //        return "["+text+"]";
     }
 
@@ -34,12 +35,12 @@ public class SentenceConsumer {
             text = text+""+sentences.goodSentences.get(i);
         }
         System.out.println("In addGoodSentence Method : ["+text+"]");
-        System.out.println(getSentences().goodSentences);
+//        System.out.println(getSentences().goodSentences);
 //        return "["+text+"]";
     }
 
-    @RabbitListener(queues = "GetQueue")
-    public Sentence getSentences(){
-        return sentences;
-    }
+//    @RabbitListener(queues = "GetQueue")
+//    public Sentence getSentences(){
+//        return sentences;
+//    }
 }
