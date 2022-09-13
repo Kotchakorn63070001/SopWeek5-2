@@ -13,7 +13,6 @@ public class WordPublisher {
     @Autowired
     private RabbitTemplate rabbitTemplate;
     protected Word words = new Word();
-    protected SentenceConsumer sentenceConsumer = new SentenceConsumer();
 
     @RequestMapping(value = "/addBad", method = RequestMethod.POST)
     public ArrayList<String> addBadWord(@RequestBody MultiValueMap<String, String> badWord){
@@ -76,11 +75,13 @@ public class WordPublisher {
         return "Not Found";
     }
 
-//    @RequestMapping(value = "/getSentence", method = RequestMethod.GET)
-//    public Sentence getSentence(){
-////        rabbitTemplate.convertAndSend("Direct", "queue",   );
-//
-//        return sentenceConsumer.getSentences();
-//    }
+    @RequestMapping(value = "/getSentence", method = RequestMethod.GET)
+    public Sentence getSentence(){
+        System.out.println("hello world 2");
+        Object send = rabbitTemplate.convertSendAndReceive("Direct", "queue", "");
+        System.out.println("hello world 1");
+        return ((Sentence) send);
+    }
+
 
 }

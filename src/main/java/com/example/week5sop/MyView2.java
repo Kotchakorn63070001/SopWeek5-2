@@ -106,6 +106,19 @@ public class MyView2 extends HorizontalLayout {
             Notification msg = Notification.show(out);
         });
 
+        btnShowSentence.addClickListener(event -> {
+            Sentence out =  WebClient.create()
+                    .get()
+                    .uri("http://localhost:8080/getSentence")
+                    .retrieve()
+                    .bodyToMono(Sentence.class)
+                    .block();
+            goodSentence.setValue(String.valueOf(out.goodSentences));
+            badSentence.setValue(String.valueOf(out.badSentences));
+        });
+
+
+
     }
 
 
